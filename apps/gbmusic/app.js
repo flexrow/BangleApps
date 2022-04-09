@@ -123,7 +123,7 @@ function rInfo(l) {
 //   if (size>l.h) {
 //     size = l.h;
 //   }
-  g.setFont("Vector", 1.h)
+  g.setFont("Vector", 1)
     .setFontAlign(0, -1) // center top
     .drawString(l.label, l.x+l.w/2, l.y);
 }
