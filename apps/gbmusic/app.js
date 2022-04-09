@@ -13,28 +13,28 @@ const BANGLE2 = process.env.HWVERSION===2;
  * @param {number} w Width to fit text in
  * @return {number} Maximum font size to make text fit
  */
-// function fitText(text, w) {
-//   if (!text.length) {
-//     return Infinity;
-//   }
-//   // make a guess, then shrink/grow until it fits
-//   const test = (s) => g.setFont("Vector", s).stringWidth(text);
-//   let best = Math.floor(100*w/test(100));
-//   if (test(best)===w) { // good guess!
-//     return best;
-//   }
-//   if (test(best)<w) {
-//     do {
-//       best++;
-//     } while(test(best)<=w);
-//     return best-1;
-//   }
-//   // width > w
-//   do {
-//     best--;
-//   } while(test(best)>w);
-//   return best;
-// }
+ function fitText(text, w) {
+   if (!text.length) {
+     return Infinity;
+   }
+   // make a guess, then shrink/grow until it fits
+   const test = (s) => g.setFont("Vector", s).stringWidth(text);
+   let best = Math.floor(100*w/test(100));
+   if (test(best)===w) { // good guess!
+     return best;
+   }
+   if (test(best)<w) {
+     do {
+       best++;
+     } while(test(best)<=w);
+     return best-1;
+   }
+   // width > w
+   do {
+     best--;
+   } while(test(best)>w);
+   return best;
+ }
 
 /**
  * @param {string} text
@@ -102,27 +102,28 @@ function rScroller(l) {
  * @param l
  */
 function rTitle(l) {
-//   if (l.offset!==null) {
-//     rScroller(l); // already scrolling
-//     return;
-//   }
-//   let size = fitText(l.label, l.w);
-//   if (size<l.h/2) {
-//     // the title is too long: start the scroller
-//     scrollStart();
-//   } else {
-  rInfo(l);
-//   }
+   if (l.offset!==null) {
+     rScroller(l); // already scrolling
+     return;
+   }
+   let size = fitText(l.label, l.w);
+   if (size<l.h/2) {
+     // the title is too long: start the scroller
+     rInfo(l);
+     //scrollStart();
+   } else {
+     rInfo(l);
+   }
 }
 /**
  * Render info field
  * @param l
  */
 function rInfo(l) {
-//   let size = fitText(l.label, l.w);
-//   if (size>l.h) {
-//     size = l.h;
-//   }
+   let size = fitText(l.label, l.w);
+   if (size>l.h) {
+     size = l.h;
+   }
   g.setFont("Vector", 1)
     .setFontAlign(0, -1) // center top
     .drawString(l.label, l.x+l.w/2, l.y);
