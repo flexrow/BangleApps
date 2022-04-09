@@ -86,7 +86,12 @@ function infoColor(name) {
  * @param l
  */
 function rScroller(l) {
-  g.setFont("Vector", Math.round(g.getHeight()*l.fsz.slice(0, -1)/100));
+  const vector = Math.round(g.getHeight()*l.label.slice(0, -1).length/100);
+  if (vector) {
+    g.setFont("Vector", vector);
+  } else {
+    g.setFont("Vector", Math.round(g.getHeight()*l.label.slice(0, 1)));
+  }
   const w = g.stringWidth(l.label)+40,
     y = l.y+l.h/2;
   l.offset = l.offset%w;
