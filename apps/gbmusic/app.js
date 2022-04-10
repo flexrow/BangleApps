@@ -379,7 +379,7 @@ function startButtonWatches() {
   // middle button: long-press for launcher, otherwise depends on number of presses
   setWatch(() => {
     if (nPress===0) {
-      tPress = setTimeout(() => {Bangle.showLauncher();}, 3000);
+      tPress = setTimeout(() => {Bangle.showLauncher();}, 1000);
     }
   }, btn, {repeat: true, edge: "rising"});
   const s = require("Storage").readJSON("gbmusic.json", 1) || {};
