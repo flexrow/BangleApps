@@ -9,8 +9,9 @@
   "tags": "notification,clock",
   "supports": ["BANGLEJS", "BANGLEJS2"],
   "allow_emulator": true,
+  "screenshots": [{"url": "neonx-screenshot.png"}, {"url": "neoniox-screenshot.png"}],
   "storage": [
-    {"name": "notify_clock.app.js", "url": "notify_clock.app.js"},
+    {"name": "notify_clock.app.js", "url": "notify_clock.app.js"}
   ],
   "data": [{"name": "notify_clock.json"}]
 }
