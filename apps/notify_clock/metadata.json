@@ -1,0 +1,16 @@
+{
+  "id": "notify_clock",
+  "name": "Notification Clock",
+  "shortName": "Notification Clock",
+  "version": "0.1",
+  "description": "Clockface with latest notification from Gadgetbridge",
+  "type": "clock",
+  "readme": "README.md",
+  "tags": "notification,clock",
+  "supports": ["BANGLEJS", "BANGLEJS2"],
+  "allow_emulator": true,
+  "storage": [
+    {"name": "notify_clock.app.js", "url": "notify_clock.app.js"},
+  ],
+  "data": [{"name": "notify_clock.json"}]
+}
