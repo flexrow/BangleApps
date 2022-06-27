@@ -2,7 +2,7 @@
   "id": "notify_clock",
   "name": "Notification Clock",
   "shortName": "Notification Clock",
-  "version": "0.01",
+  "version": "0.02",
   "description": "Clockface with latest notification from Gadgetbridge",
   "icon": "neonx.png",
   "type": "clock",
