@@ -27,8 +27,8 @@ we should start a timeout for settings.unreadTimeout to return
 to the clock. */
 var unreadTimeout;
 /// List of all our messages
-var MESSAGES = [{"t":"notify","id":1575479849,"src":"Hangouts","title":"First","body":"message contentsasdasdasdasdasdasd", new: true}];
-// var MESSAGES = require("Storage").readJSON("messages.json", 1) || [];
+//var MESSAGES = [{"t":"notify","id":1575479849,"src":"Hangouts","title":"First","body":"message contentsasdasdasdasdasdasd", new: true}];
+var MESSAGES = require("Storage").readJSON("messages.json", 1) || [];
 if (!Array.isArray(MESSAGES)) MESSAGES = [];
 var onMessagesModified = function (msg) {
   // TODO: if new, show this new one
