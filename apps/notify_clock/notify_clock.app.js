@@ -502,7 +502,7 @@ function draw() {
       {type:"txt", font:"10%", label:dateStr, id:"date"},
     ]
   })
-  if (messageTitle[0]) {
+  if (messageTitle) {
     layout = new Layout({
       type:"v", c: [
         {type:"h", c: [
