@@ -317,14 +317,14 @@ function showMessage(msgid) {
 function checkMessages(options) {
   options = options || {};
   // If no messages, just show 'no messages' and return
-  if (!MESSAGES.length) {
-    if (!options.clockIfNoMsg) return E.showPrompt(/*LANG*/"No Messages", {
-      title:/*LANG*/"Messages",
-      img: require("heatshrink").decompress(atob("kkk4UBrkc/4AC/tEqtACQkBqtUDg0VqAIGgoZFDYQIIM1sD1QAD4AIBhnqA4WrmAIBhc6BAWs8AIBhXOBAWz0AIC2YIC5wID1gkB1c6BAYFBEQPqBAYXBEQOqBAnDAIQaEnkAngaEEAPDFgo+IKA5iIOhCGIAFb7RqAIGgtUBA0VqobFgNVA")),
-      buttons: {/*LANG*/"Ok": 1 }
-    }).then(() => { load() });
-    return load();
-  }
+  //if (!MESSAGES.length) {
+  //  if (!options.clockIfNoMsg) return E.showPrompt(/*LANG*/"No Messages", {
+  //    title:/*LANG*/"Messages",
+  //    img: require("heatshrink").decompress(atob("kkk4UBrkc/4AC/tEqtACQkBqtUDg0VqAIGgoZFDYQIIM1sD1QAD4AIBhnqA4WrmAIBhc6BAWs8AIBhXOBAWz0AIC2YIC5wID1gkB1c6BAYFBEQPqBAYXBEQOqBAnDAIQaEnkAngaEEAPDFgo+IKA5iIOhCGIAFb7RqAIGgtUBA0VqobFgNVA")),
+  //    buttons: {/*LANG*/"Ok": 1 }
+  //  }).then(() => { load() });
+  //  return load();
+  //}
   // we have >0 messages
   var newMessages = MESSAGES.filter(m => m.new && m.id != "music");
   return newMessages[0]
