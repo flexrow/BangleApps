@@ -27,7 +27,7 @@ we should start a timeout for settings.unreadTimeout to return
 to the clock. */
 var unreadTimeout;
 /// List of all our messages
-//var MESSAGES = [{"t":"notify","id":1575479849,"src":"Hangouts","title":"First","body":"message contentsasdasdasdasdasdasd", new: true}];
+//var MESSAGES = [{"t":"notify","id":1575479849,"src":"hangouts","title":"Firsasdasdasdt","body":"abcdefghijklmnopqrstuvwxyz", new: true}];
 var MESSAGES = require("Storage").readJSON("messages.json", 1) || [];
 if (!Array.isArray(MESSAGES)) MESSAGES = [];
 var onMessagesModified = function (msg) {
@@ -501,22 +501,22 @@ function draw() {
       ], },
       {type:"txt", font:"10%", label:dateStr, id:"date"},
     ]
-  })
+  });
   if (messageTitle) {
     layout = new Layout({
       type:"v", c: [
         {type:"h", c: [
-          {type:"txt", font:"27%", label:timeStr, id:"time" },
+          {type:"txt", font:"25%", label:timeStr, id:"time" },
           {type:"txt", font:"5%", label:dowcwStr, id:"doc" },
         ], },
-        {type:"txt", font:"10%", label:dateStr, id:"date"},
-        {type:"h", c: [
-          {type:"img", src:getMessageImage(messageTitle.src)},
-          {type:"txt", font:"15%", label:messageTitle.title},
+        {type:"txt", font:"6%", label:dateStr, id:"date"},
+        {type:"h", pad:4, c: [
+          {type:"img", src:getMessageImage(messageTitle)},
+          {type:"txt", pad:4, font:"10%", label:messageTitle.title.slice(0, 12)},
         ]},
-        {type:"txt", font:"10%", label:messageTitle.body},
+        {type:"txt", font:"10%", label:messageTitle.body.slice(0, 12) + "\n" + messageTitle.body.slice(12, 24)},
       ]
-    })
+    });
   }
   g.clear();
   layout.render();
@@ -540,12 +540,6 @@ Bangle.on('lock', on => {
 });
 // Show launcher when middle button pressed
 Bangle.setUI("clock");
-
-
-
-
-
-
 
 
 // Load widgets
